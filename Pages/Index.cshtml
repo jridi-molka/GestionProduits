@@ -1,0 +1,49 @@
+﻿@page
+@model GestionProduits.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Accueil";
+}
+
+<div class="hero-landing mb-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-lg-start text-center">
+                <h1 class="display-5 mb-3">Gérez vos produits simplement — plus vite, mieux.</h1>
+                <p class="lead mb-4">Organisez, éditez et suivez votre catalogue. Interface simple et actions rapides pour gagner du temps.</p>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block text-center">
+                <!-- Simple illustrative SVG -->
+                <svg width="280" height="220" viewBox="0 0 280 220" fill="none" xmlns="https://th.bing.com/th/id/OIP.2Wo8JHZCLpe7OFbIjxzbiwHaHa?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" aria-hidden="true">
+                    <rect x="10" y="20" width="120" height="80" rx="8" fill="rgba(255,255,255,0.12)" />
+                    <rect x="150" y="40" width="120" height="120" rx="12" fill="rgba(255,255,255,0.18)" />
+                    <circle cx="210" cy="80" r="18" fill="rgba(255,255,255,0.9)" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card card-theme h-100 text-center p-3">
+                <div class="card-body">
+                    <h5 class="card-title">Produits</h5>
+                    <p class="text-muted-compact">Consultez et gérez tous vos produits.</p>
+                    <a asp-page="/Produits/Index" class="btn btn-primary-brand mt-3">Voir</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-theme h-100 text-center p-3">
+                <div class="card-body">
+                    <h5 class="card-title">Catégories</h5>
+                    <p class="text-muted-compact">Organisez vos produits par catégorie.</p>
+                    <a asp-page="/Categories/Index" class="btn btn-primary-brand mt-3">Voir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+```

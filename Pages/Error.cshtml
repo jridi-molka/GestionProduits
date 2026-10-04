@@ -1,0 +1,33 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card card-theme">
+            <div class="card-header">
+                <h1 class="h4 mb-0 card-title">Erreur</h1>
+            </div>
+            <div class="card-body">
+                <h2 class="mb-3">Une erreur est survenue lors du traitement de la requête.</h2>
+
+                @if (Model.ShowRequestId)
+                {
+                    <p>
+                        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+                    </p>
+                }
+
+                <h3>Mode Développement</h3>
+                <p>
+                    Passer en environnement <strong>Development</strong> affiche des informations détaillées sur l'erreur.
+                </p>
+                <p>
+                    <strong>Ne pas activer Development en production.</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

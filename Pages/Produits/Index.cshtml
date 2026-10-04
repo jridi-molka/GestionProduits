@@ -1,0 +1,53 @@
+@page
+@model GestionProduits.Pages.Produits.IndexModel
+@{
+    ViewData["Title"] = "Produits";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="h3 mb-0">Liste des produits</h1>
+        <small class="text-muted">@Model.Produits.Count produit(s) au total</small>
+    </div>
+    <a asp-page="/Produits/Create" class="btn btn-primary btn-primary-brand">+ Nouveau produit</a>
+</div>
+
+<div class="card card-theme">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0 table-theme">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Catégorie</th>
+                        <th class="text-end">Prix</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var produit in Model.Produits)
+                    {
+                        <tr>
+                            <td class="fw-semibold">@produit.Nom</td>
+                            <td>
+                                <span class="badge rounded-pill text-bg-secondary">@(produit.Categorie?.Nom ?? "Sans catégorie")</span>
+                            </td>
+                            <td class="text-end">@produit.Prix.ToString("N2") DT</td>
+                            <td class="text-end">
+                                <a asp-page="Update" asp-route-id="@produit.Id" class="btn btn-sm btn-outline-primary me-2">Modifier</a>
+                                <a asp-page="Delete" asp-route-id="@produit.Id" class="btn btn-sm btn-outline-primary">Supprimer</a>
+                            </td>
+                        </tr>
+                    }
+
+                    @if (!Model.Produits.Any())
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center text-muted py-5">Aucun produit pour le moment.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

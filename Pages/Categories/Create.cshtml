@@ -1,0 +1,27 @@
+@page
+@model GestionProduits.Pages.Categories.CreateModel
+@{
+    ViewData["Title"] = "Créer une catégorie";
+}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card card-theme">
+            <div class="card-header">
+                <h1 class="h5 mb-0 card-title">Créer une catégorie</h1>
+            </div>
+            <div class="card-body form-theme">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <label asp-for="Categorie.Nom" class="form-label"></label>
+                        <input asp-for="Categorie.Nom" class="form-control" />
+                        <span asp-validation-for="Categorie.Nom" class="text-danger"></span>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <input type="submit" value="Créer" class="btn btn-primary btn-primary-brand" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

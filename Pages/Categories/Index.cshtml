@@ -1,0 +1,37 @@
+@page
+@model GestionProduits.Pages.Categories.IndexModel
+@{
+	ViewData["Title"] = "Catégories";
+}
+<div class="card card-theme">
+	<div class="card-header">
+		<div class="d-flex justify-content-between align-items-center">
+			<h1 class="h5 mb-0">@ViewData["Title"]</h1>
+			<a asp-page="Create" class="btn btn-primary btn-primary-brand">Créer une nouvelle catégorie</a>
+		</div>
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-theme mb-0">
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th class="text-end">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var category in Model.Categories)
+					{
+						<tr>
+							<td class="fw-semibold">@category.Nom</td>
+							<td class="text-end">
+								<a asp-page="Update" asp-route-id="@category.Id" class="btn btn-sm btn-outline-primary me-2">Modifier</a>
+								<a asp-page="Delete" asp-route-id="@category.Id" class="btn btn-sm btn-outline-primary">Supprimer</a>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

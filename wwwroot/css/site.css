@@ -1,0 +1,151 @@
+html {
+  font-size: 14px;
+}
+
+:root {
+  /* Palette corail (brand demandé) */
+  --brand-primary: #ff6b6b; /* corail */
+  --brand-accent: #ff3b30;
+  --brand-soft: #fff4ef;
+  --brand-muted: #6c757d;
+  --card-bg: #ffffff;
+  --brand-focus: rgba(255,107,107,0.18);
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--brand-focus);
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background-color: var(--brand-soft);
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* THEME STYLES */
+body {
+  color: #212529;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container-main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card style consistent */
+.card-theme {
+  background: var(--card-bg);
+  border: 0;
+  border-radius: .5rem;
+  box-shadow: 0 .125rem .5rem rgba(33,37,41,0.06);
+}
+.card-theme .card-header {
+  background: transparent;
+  border-bottom: 0;
+  padding-bottom: .75rem;
+}
+.card-title {
+  color: var(--brand-accent);
+}
+
+/* Buttons brand */
+.btn-primary-brand {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #fff;
+}
+.btn-primary-brand:hover {
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+}
+
+.btn-outline-brand {
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+.btn-outline-brand:hover {
+  background-color: rgba(255,107,107,0.06);
+}
+
+/* Form spacing and inputs */
+.form-theme .form-label {
+  font-weight: 600;
+}
+.form-theme .form-control, .form-theme .form-select {
+  border-radius: .375rem;
+}
+
+/* Tables */
+.table-theme thead {
+  background: linear-gradient(180deg, rgba(255,107,107,0.05), transparent);
+}
+
+/* Utilities */
+.text-muted-compact { color: var(--brand-muted); }
+
+/* Accessible focus improvements */
+.a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.12rem var(--brand-focus);
+}
+
+/* HERO */
+.hero-landing {
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+  color: #fff;
+  padding: 4rem 1rem;
+  border-radius: .6rem;
+}
+.hero-landing h1 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.hero-cta .btn {
+  min-width: 160px;
+}
+
+/* Force contextual danger/warning to brand palette as fallback */
+.btn-danger, .btn-warning {
+  background-color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+  color: #fff !important;
+}
+.btn-outline-danger, .btn-outline-warning {
+  color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+}
+
+/* Force Bootstrap contextual buttons (danger/warning) to use brand palette
+   This ensures pages using btn-danger/btn-warning keep the same theme */
+.btn-danger, .btn-warning {
+  background-color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+  color: #fff !important;
+}
+.btn-outline-danger, .btn-outline-warning {
+  color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+}
+
